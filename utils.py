@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 
 
-def sin_signal_freq(shape=[500, 309, 2]):
+def sin_signal_freq(shape=[1000, 309, 2]):
     """
     Synthetic data
     Generates a list of sine signals with frequency and phase variation
@@ -42,6 +42,7 @@ def draw_latent_frequency(encoder=None):
     plt.cla();plt.clf()
     plt.scatter(sin_latents_1[:, 0], sin_latents_1[:, 1], s=3.5, color=[color_id[i] for i in amp_1])
     plt.savefig('frequency_with_phase_latents.png', dpi=200)
+    plt.show()
 
 dataset, _ = sin_signal_freq()
 np.random.shuffle(dataset)
